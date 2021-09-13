@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "webpack",
     "test": "JWT='lunalovegood' mocha \"./tests/*.spec.js\" --require @babel/register",
     "start": "node server",
     "start-dev": "npm run build-watch & npm run start-dev-server",
