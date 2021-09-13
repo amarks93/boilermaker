@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "JWT='lunalovegood' mocha \"./tests/*.spec.js\" --require @babel/register",
+    "seed": "node seed.js",
     "start": "node server",
     "start-dev": "npm run build-watch & npm run start-dev-server",
     "start-dev-server": "JWT='lunalovegood' nodemon server",
