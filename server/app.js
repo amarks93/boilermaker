@@ -1,8 +1,8 @@
 const path = require('path');
 const express = require('express');
-const app = express();
-
 const morgan = require('morgan');
+const app = express();
+module.exports = app;
 
 app.use(morgan('dev'));
 
@@ -28,14 +28,12 @@ app.use((req, res, next) => {
   }
 });
 
+app.use('*', (req, res) =>
+  res.sendFile(path.join(__dirname, '..', 'public/index.html'))
+);
+
 app.use((err, req, res) => {
   console.error(err);
   console.error(err.stack);
   res.status(err.status || 500).send(err.message || 'Internal server error.');
 });
-
-app.use('*', (req, res) =>
-  res.sendFile(path.join(__dirname, '..', 'public/index.html'))
-);
-
-module.exports = app;
