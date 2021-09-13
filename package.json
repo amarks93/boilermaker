@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "JWT='lunalovegood' mocha \"./tests/*.spec.js\" --require @babel/register",
     "start-dev": "npm run build-watch & npm run start-dev-server",
     "start-dev-server": "JWT='lunalovegood' nodemon server",
     "build-watch": "webpack -w"
@@ -15,12 +15,14 @@
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@babel/preset-react": "^7.14.5",
+    "@babel/register": "^7.15.3",
     "babel-loader": "^8.2.2",
     "chai": "^4.3.4",
     "css-loader": "^6.2.0",
     "enzyme": "^3.11.0",
     "mocha": "^9.1.1",
     "style-loader": "^3.2.1",
+    "supertest": "^6.1.6",
     "webpack": "^5.52.1",
     "webpack-cli": "^4.8.0"
   },
